@@ -1,1 +1,2 @@
-Print("Hallo Welt")
+print("Hallo Welt")
+print("Was geht")
