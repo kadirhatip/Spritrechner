@@ -1,17 +1,17 @@
 import tkinter as tk
 
-width = 600
-height = 400
-margin_top = 50
-margin_side = 50
-seitenmaße = f"{width}x{height}+{margin_top}+{margin_side}"
+breite = 600
+höhe = 400
+rand_oben = 50
+rand_seite = 50
+seitenmaße = f"{breite}x{höhe}+{rand_oben}+{rand_seite}"
 
-window = tk.Tk()
-window.title("Spritrechner")
-window.geometry(seitenmaße)
+fenster = tk.Tk()
+fenster.title("Spritrechner")
+fenster.geometry(seitenmaße)
 
-greeting_lbl = tk.Label(window, text="Hallo Welt")
-greeting_lbl.pack()
+begrüßung_lbl = tk.Label(fenster, text="Hallo Welt")
+begrüßung_lbl.pack()
 
 
 
@@ -22,4 +22,4 @@ try:
 
     windll.shcore.SetProcessDpiAwareness(1)
 finally:
-    window.mainloop()
+    fenster.mainloop()
