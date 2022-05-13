@@ -12,6 +12,8 @@ fenster.geometry(seitenmaße)
 
 begrüßung_lbl = tk.Label(fenster, text="Hallo Welt")
 begrüßung_lbl.pack()
+aufforderung_lbl = tk.Label(fenster, text="Gib deinen Namen ein: ")
+aufforderung_lbl.pack()
 
 
 
