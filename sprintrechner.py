@@ -10,10 +10,16 @@ fenster = tk.Tk()
 fenster.title("Spritrechner")
 fenster.geometry(seitenmaße)
 
-begrüßung_lbl = tk.Label(fenster, text="Hallo Welt")
-begrüßung_lbl.pack()
 aufforderung_lbl = tk.Label(fenster, text="Gib deinen Namen ein: ")
 aufforderung_lbl.pack()
+
+eingabe_entry = tk.Entry(fenster)
+eingabe_entry.pack()
+
+def ausgabe():
+    name = str(eingabe_entry.getvar())
+    print(name)
+
 
 
 
