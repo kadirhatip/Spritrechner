@@ -1,33 +1,20 @@
-import tkinter as tk
+import PySimpleGUI as sg
 
-breite = 600
-höhe = 400
-rand_oben = 50
-rand_seite = 50
-seitenmaße = f"{breite}x{höhe}+{rand_oben}+{rand_seite}"
+title = "Mein erstes Fenster"
 
-fenster = tk.Tk()
-fenster.title("Spritrechner")
-fenster.geometry(seitenmaße)
+layout = [
+    [sg.Text("Gib deinen Namen ein und drücke den Knopf")],
+    [sg.InputText(key="_input"), sg.Button("Knopf", key="_knopf")],
+    [sg.Text("Ausgabe", key="_ausgabe")]
+]
 
-aufforderung_lbl = tk.Label(fenster, text="Gib deinen Namen ein: ")
-aufforderung_lbl.pack()
+window = sg.Window(title, layout)
 
-eingabe_entry = tk.Entry(fenster)
-eingabe_entry.pack()
+while True:
+    event, values = window.read()
 
-def ausgabe():
-    name = str(eingabe_entry.getvar())
-    print(name)
+    if event == sg.WINDOW_CLOSED:
+        break
 
-
-
-
-
-#Um die GUI scharfzustellen und sie dann zu starten
-try:
-    from ctypes import windll
-
-    windll.shcore.SetProcessDpiAwareness(1)
-finally:
-    fenster.mainloop()
+    if event == "_knopf":
+        window.find_element("_ausgabe").update(("Hallo %s" % values["_input"]))
