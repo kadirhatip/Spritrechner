@@ -1,4 +1,7 @@
 import PySimpleGUI as sg
+# Um die Unschärfe rauszunehmen
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(1)
 
 title = "Converter"
 
