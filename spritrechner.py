@@ -35,7 +35,9 @@ while True:
         factor = get_factor(spin)
 
         if input.isnumeric():
-            solution = int(input) * factor
+            solution_long = int(input) * factor
+            # Formatiert das anzuzeigende Ergebnis mit zwei Dezimalstellen
+            solution = "{:.2f}".format(solution_long)
             window["_output"].update(solution)
         else:
             window["_output"].update("Not a number!")
