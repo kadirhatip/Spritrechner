@@ -1,3 +1,5 @@
+from os import system
+system("cls")
 import PySimpleGUI as sg
 # Um die Unschärfe rauszunehmen
 from ctypes import windll
